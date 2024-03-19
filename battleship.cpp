@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-
+//åŸºäºè›®åŠ›æ¨¡å¼åŒ¹é…ï¼Œåœ¨è®¡ç®—æœºä¸Šå®ç°â€œæµ·æˆ˜â€æ¸¸æˆ(ä¸€ä¸ªç»å…¸çš„ç­–ç•¥æ¸¸æˆ)ã€‚æ¸¸æˆçš„è§„åˆ™æ˜¯è¿™æ ·çš„:æ¸¸æˆä¸­æœ‰ä¸¤ä¸ªå¯¹æ‰‹(åœ¨è¿™é‡Œï¼Œåˆ†åˆ«æ˜¯ç©å®¶å’Œè®¡ç®—æœº)ï¼Œæ¸¸æˆæ˜¯åœ¨ä¸¤å—å®Œå…¨ç›¸åŒçš„æ£‹ç›˜(10ä¹˜10çš„æ–¹æ ¼)ä¸Šè¿›è¡Œçš„ï¼Œä¸¤ä¸ªå¯¹æ‰‹åˆ†åˆ«åœ¨å„è‡ªçš„æ£‹ç›˜ä¸Šæ”¾ç½®ä»–ä»¬çš„æˆ˜èˆ°ï¼Œå½“ç„¶å¯¹æ‰‹æ˜¯çœ‹ä¸è§çš„ã€‚æ¯ä¸€ä¸ªå¯¹æ‰‹éƒ½æœ‰5è‰˜æˆ˜èˆ°ï¼Œæ¯è‰˜æˆ˜èˆ°éƒ½åœ¨æ£‹ç›˜ä¸Šå æ®ä¸€å®šæ•°é‡çš„æ ¼å­:ä¸€è‰˜é©±é€èˆ°(2æ ¼)ã€ä¸€è‰˜æ½œè‰‡(3 æ ¼)ã€ä¸€è‰˜æˆ˜åˆ—èˆ°(4 æ ¼)ã€ä¸€è‰˜èˆªç©ºæ¯èˆ°(5æ ¼)ã€‚æ¯è‰˜èˆ¹æ—¢å¯ä»¥ç«–ç€æ”¾ä¹Ÿå¯ä»¥æ¨ªç€æ”¾ï¼Œä½†ä»»æ„ä¸¤è‰˜èˆ¹ä¸èƒ½äº’ç›¸æ¥è§¦ã€‚æ¸¸æˆçš„ç©æ³•æ˜¯åŒæ–¹è½®æµâ€œè½°ç‚¸â€å¯¹æ–¹çš„æˆ˜èˆ°ã€‚æ¯æ¬¡è½°ç‚¸çš„ç»“æœæ˜¯å‡»ä¸­è¿˜æ˜¯æœªå‡»ä¸­éƒ½ä¼šæ˜¾ç¤ºå‡ºæ¥ã€‚å¦‚æœå‡»ä¸­çš„è¯ï¼Œè¯¥ç©å®¶å°±å¯ä»¥ç»§ç»­æ”»å‡»ï¼Œç›´åˆ°å‡»ä¸ä¸­ä¸ºæ­¢ã€‚æ¸¸æˆçš„ç›®æ ‡æ˜¯èµ¶åœ¨å¯¹æ‰‹ä¹‹å‰æŠŠä»–æ‰€æœ‰çš„æˆ˜èˆ°éƒ½å‡»æ²‰(è¦å‡»æ²‰ä¸€è‰˜æˆ˜èˆ°ï¼Œè¯¥æˆ˜èˆ°çš„æ‰€æœ‰æ ¼å­éƒ½å¿…é¡»è¢«å‘½ä¸­)ã€‚
 const int BOARD_SIZE = 10;
 const char EMPTY = '.';
 
@@ -57,7 +57,7 @@ void placeShip(char board[BOARD_SIZE][BOARD_SIZE], int length) {
         }
     }
     else {
-        placeShip(board, length); // ÖØĞÂ·ÅÖÃÕ½½¢
+        placeShip(board, length); // é‡æ–°æ”¾ç½®æˆ˜èˆ°
     }
 }
 void placeShip(char board[BOARD_SIZE][BOARD_SIZE], int x,int y,int length,int  isVertical) {
@@ -85,7 +85,7 @@ void placeShip(char board[BOARD_SIZE][BOARD_SIZE], int x,int y,int length,int  i
         cout << endl;
     }
     else {
-        cout << "°Ú·Å²»ºÏ·¨£¬ÇëÖØĞÂ°Ú·Å" << endl;
+        cout << "æ‘†æ”¾ä¸åˆæ³•ï¼Œè¯·é‡æ–°æ‘†æ”¾" << endl;
         cin>>x>>y>>isVertical;
         placeShip(board,x, y, length, isVertical);
 
@@ -95,18 +95,18 @@ void placeShip(char board[BOARD_SIZE][BOARD_SIZE], int x,int y,int length,int  i
 }
 bool attack(char board[BOARD_SIZE][BOARD_SIZE], int row, int col) {
     if (board[row][col] == 'S') {
-        board[row][col] = 'X'; // ±ê¼ÇÎªÒÑ»÷ÖĞ
-        cout << "»÷ÖĞ£¡" << endl;
+        board[row][col] = 'X'; // æ ‡è®°ä¸ºå·²å‡»ä¸­
+        cout << "å‡»ä¸­ï¼" << endl;
         return true;
     }
     else if(board[row][col] == 'X'){
-        cout << "¸ÃÎ»ÖÃÒÑ±»¹¥»÷¹ı" << endl;
+        cout << "è¯¥ä½ç½®å·²è¢«æ”»å‡»è¿‡" << endl;
         return false;
     }
     else
     {
         board[row][col] = 'O';
-        cout << "Î´»÷ÖĞ" << endl;
+        cout << "æœªå‡»ä¸­" << endl;
         return false;
     }
 }
@@ -114,11 +114,11 @@ bool isGameOver(char board[BOARD_SIZE][BOARD_SIZE]) {
     for (int i = 0; i < BOARD_SIZE; i++) {
         for (int j = 0; j < BOARD_SIZE; j++) {
             if (board[i][j] == 'S') {
-                return false; // ÕÒµ½Õ½½¢£¬ÓÎÏ·Î´½áÊø
+                return false; // æ‰¾åˆ°æˆ˜èˆ°ï¼Œæ¸¸æˆæœªç»“æŸ
             }
         }
     }
-    return true; // Ã»ÓĞÕÒµ½Õ½½¢£¬ÓÎÏ·½áÊø
+    return true; // æ²¡æœ‰æ‰¾åˆ°æˆ˜èˆ°ï¼Œæ¸¸æˆç»“æŸ
 }
 void printBoard(char board[BOARD_SIZE][BOARD_SIZE]) {
     for (int i = 0; i < BOARD_SIZE; i++) {
@@ -139,22 +139,22 @@ int main() {
     char board2[BOARD_SIZE][BOARD_SIZE];
     int lastHitRow = -1, lastHitCol = -1;
     int a, b,c;
-    srand(static_cast<unsigned int>(time(0))); // ÉèÖÃËæ»úÖÖ×Ó
+    srand(static_cast<unsigned int>(time(0))); // è®¾ç½®éšæœºç§å­
 
     initializeBoard(board1);
     initializeBoard(board2);
 
-    placeShip(board1, 2); // ·ÅÖÃÇıÖğ½¢(2¸ñ)
-    placeShip(board1, 3); // ·ÅÖÃÇ±Í§(3¸ñ)
-    placeShip(board1, 4); // ·ÅÖÃÕ½ÁĞ½¢(4¸ñ)
-    placeShip(board1, 5); // ·ÅÖÃº½¿ÕÄ¸½¢(5¸ñ)
-    cout << "ÇëÒÀ´Î·ÅÖÃÇıÖğ½¢(2¸ñ)£¬Ç±Í§(3¸ñ)£¬Õ½ÁĞ½¢(4¸ñ)£¬º½¿ÕÄ¸½¢(5¸ñ)¡£ÊäÈëÈı¸öÊı×Ö£¬·Ö±ğ±íÊ¾ÆğÊ¼×ø±êºÍ°Ú·Å·½Ê½£¨£¨1£©´¹Ö±£¬£¨0£©Ë®Æ½£©" << endl;
+    placeShip(board1, 2); // æ”¾ç½®é©±é€èˆ°(2æ ¼)
+    placeShip(board1, 3); // æ”¾ç½®æ½œè‰‡(3æ ¼)
+    placeShip(board1, 4); // æ”¾ç½®æˆ˜åˆ—èˆ°(4æ ¼)
+    placeShip(board1, 5); // æ”¾ç½®èˆªç©ºæ¯èˆ°(5æ ¼)
+    cout << "è¯·ä¾æ¬¡æ”¾ç½®é©±é€èˆ°(2æ ¼)ï¼Œæ½œè‰‡(3æ ¼)ï¼Œæˆ˜åˆ—èˆ°(4æ ¼)ï¼Œèˆªç©ºæ¯èˆ°(5æ ¼)ã€‚è¾“å…¥ä¸‰ä¸ªæ•°å­—ï¼Œåˆ†åˆ«è¡¨ç¤ºèµ·å§‹åæ ‡å’Œæ‘†æ”¾æ–¹å¼ï¼ˆï¼ˆ1ï¼‰å‚ç›´ï¼Œï¼ˆ0ï¼‰æ°´å¹³ï¼‰" << endl;
     for (int i = 2; i < 6; i++)
     {   
         cin >> a >> b >> c;
 		placeShip(board2, a, b, i, c);
     }
-    cout<<"ÎÒ¾ü²¿ÊğÍê±Ï"<<endl;
+    cout<<"æˆ‘å†›éƒ¨ç½²å®Œæ¯•"<<endl;
     for (int i = 0; i < BOARD_SIZE; i++) {
         for (int j = 0; j < BOARD_SIZE; j++) {
             cout <<"." << " ";
@@ -163,8 +163,8 @@ int main() {
     }
     cout << endl;
 
-    cout << "µĞ¾ü²¿ÊğÍê±Ï"<< endl;
-    cout << "ŞôÏÂenter¼ü¿ªÊ¼ÓÎÏ·" << endl;
+    cout << "æ•Œå†›éƒ¨ç½²å®Œæ¯•"<< endl;
+    cout << "æ‘ä¸‹enteré”®å¼€å§‹æ¸¸æˆ" << endl;
     cin.get();
     cin.get();
     system("cls");
@@ -176,7 +176,7 @@ int main() {
 
         bool hit;
         if (currentPlayer == 1) {
-            cout << "ÄãµÄ»ØºÏ£¬ÇëÊäÈë¹¥»÷µÄ×ø±ê£º" << endl;
+            cout << "ä½ çš„å›åˆï¼Œè¯·è¾“å…¥æ”»å‡»çš„åæ ‡ï¼š" << endl;
             cin >> row >> col;
             hit = attack(board1, row, col);
             printBoard(board1);
@@ -187,7 +187,7 @@ int main() {
       
         else {
             if (lastHitRow != -1 && lastHitCol != -1) {
-                // Èç¹ûÉÏÒ»´Î¹¥»÷»÷ÖĞÁËÕ½½¢£¬ÄÇÃ´ÔÚÕâ´Î¹¥»÷Ê±ÓÅÏÈ¿¼ÂÇÖÜÎ§µÄ¸ñ×Ó
+                // å¦‚æœä¸Šä¸€æ¬¡æ”»å‡»å‡»ä¸­äº†æˆ˜èˆ°ï¼Œé‚£ä¹ˆåœ¨è¿™æ¬¡æ”»å‡»æ—¶ä¼˜å…ˆè€ƒè™‘å‘¨å›´çš„æ ¼å­
                 int directions[4][2] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
                 int flag = 1;
                 for (int i = 0; i < 4; i++) {
@@ -205,11 +205,11 @@ int main() {
                 }
             }
             else {
-                // Èç¹ûÉÏÒ»´Î¹¥»÷Ã»ÓĞ»÷ÖĞÕ½½¢£¬ÄÇÃ´Ëæ»úÑ¡ÔñÒ»¸öÎ»ÖÃ½øĞĞ¹¥»÷
+                // å¦‚æœä¸Šä¸€æ¬¡æ”»å‡»æ²¡æœ‰å‡»ä¸­æˆ˜èˆ°ï¼Œé‚£ä¹ˆéšæœºé€‰æ‹©ä¸€ä¸ªä½ç½®è¿›è¡Œæ”»å‡»
                 row = rand() % BOARD_SIZE;
                 col = rand() % BOARD_SIZE;
             }
-            cout << "µçÄÔµÄ»ØºÏ¡£µçÄÔÑ¡Ôñ¹¥»÷µÄ×ø±êÎª£º" << row << ", " << col << endl;
+            cout << "ç”µè„‘çš„å›åˆã€‚ç”µè„‘é€‰æ‹©æ”»å‡»çš„åæ ‡ä¸ºï¼š" << row << ", " << col << endl;
             hit = attack(board2, row, col);
             if (hit)
             {
@@ -227,19 +227,19 @@ int main() {
         }
         if (isGameOver(board2))
         {
-            cout << "µçÄÔ»ñµÃÊ¤Àû£¡" << endl;
+            cout << "ç”µè„‘è·å¾—èƒœåˆ©ï¼" << endl;
             cin.get();
             break;
         }
         if (isGameOver(board1))
         {
-            cout << "Äã»ñµÃÊ¤Àû£¡" << endl;
+            cout << "ä½ è·å¾—èƒœåˆ©ï¼" << endl;
             cin.get();
             break;
         }
 
         if (!hit) {
-            currentPlayer = 3 - currentPlayer; // ÇĞ»»Íæ¼Ò
+            currentPlayer = 3 - currentPlayer; // åˆ‡æ¢ç©å®¶
         }
 
     }
